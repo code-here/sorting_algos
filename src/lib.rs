@@ -1,28 +1,26 @@
-
-
-pub fn bubble_sort(arr: &mut [i32]) -> &mut [i32]{
+pub fn bubble_sort(arr: &mut [i32]) -> &mut [i32] {
     heading("using Bubble Sort:");
-    let length = arr.len()-1;
+    let length = arr.len() - 1;
     for j in 0..length {
-        for i in 0..(length-j) {
-            if arr[i] > arr[i+1] {
-                arr.swap(i, i+1);
-                println!("swapped {} and {}: {:?}", arr[i+1], arr[i], arr);
+        for i in 0..(length - j) {
+            if arr[i] > arr[i + 1] {
+                arr.swap(i, i + 1);
+                println!("swapped {} and {}: {:?}", arr[i + 1], arr[i], arr);
             }
         }
     }
     arr
 }
 
-pub fn i_bubble_sort(arr: &mut [i32]) -> &mut [i32]{
+pub fn i_bubble_sort(arr: &mut [i32]) -> &mut [i32] {
     heading(" using improved bubble sort:");
-    let length = arr.len()-1;
+    let length = arr.len() - 1;
     let mut sorted = true;
     for j in 0..length {
-        for i in 0..(length-j) {
-            if arr[i] > arr[i+1] {
-                arr.swap(i, i+1);
-                println!("swapped {} and {}: {:?}", arr[i+1], arr[i], arr);
+        for i in 0..(length - j) {
+            if arr[i] > arr[i + 1] {
+                arr.swap(i, i + 1);
+                println!("swapped {} and {}: {:?}", arr[i + 1], arr[i], arr);
                 sorted = false;
             }
         }
@@ -41,10 +39,10 @@ pub fn insertion_sort(arr: &mut [i32]) -> &mut [i32] {
         let mut not_placed = true;
         for j in (0..i).rev() {
             if arr[j] > temp {
-                arr[j+1] = arr[j];
+                arr[j + 1] = arr[j];
                 has_moved = true;
             } else {
-                arr[j+1] = temp;
+                arr[j + 1] = temp;
                 not_placed = false;
                 break;
             }
@@ -65,7 +63,7 @@ pub fn selection_sort(arr: &mut [i32]) -> &mut [i32] {
             if arr[temp_index] < arr[j] {
                 temp_index = j;
             }
-            if j == length-1 {
+            if j == length - 1 {
                 arr.swap(j, temp_index);
             }
         }
